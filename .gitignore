@@ -19,3 +19,4 @@ tb_logs/**
 states/**
 !states/.keep
 my_train
+*.out
