@@ -12,7 +12,10 @@ __pycache__
 .pytest*
 venv
 asr_env
-checkpoints
-tb_logs
-states
+checkpoints/**
+!checkpoints/.keep
+tb_logs/**
+!tb_logs/.keep
+states/**
+!states/.keep
 my_train
