@@ -26,7 +26,7 @@ speech_config:
   top_db: null
 
 decoder_config:
-  vocabulary: vocab.subwords
+  vocabulary: asr_tf/vocab.subwords
   target_vocab_size: 1024
   max_subword_length: 4
   blank_at_zero: True
@@ -67,7 +67,7 @@ learning_config:
           num_masks: 1
           mask_factor: 27
     data_paths:
-      - sample_data/trans.tsv
+      - asr_tf/sample_data/trans.tsv
     tfrecords_dir: null
     shuffle: True
     cache: True
@@ -78,7 +78,7 @@ learning_config:
   eval_dataset_config:
     use_tf: False
     data_paths:
-      - one_data_frm_tr/trans.tsv
+      - asr_tf/one_data_frm_tr/trans.tsv
     tfrecords_dir: null
     shuffle: False
     cache: True
@@ -89,7 +89,7 @@ learning_config:
   test_dataset_config:
     use_tf: False
     data_paths:
-      - one_data_frm_tr/trans.tsv
+      - asr_tf/one_data_frm_tr/trans.tsv
     tfrecords_dir: null
     shuffle: False
     cache: True
@@ -104,13 +104,13 @@ learning_config:
     batch_size: 1
     num_epochs: 500
     checkpoint:
-      filepath: checkpoints/{epoch:02d}.h5
+      filepath: asr_tf/checkpoints/{epoch:02d}.h5
       save_best_only: True
       save_weights_only: True
       save_freq: epoch
-    states_dir: states
+    states_dir: asr_tf/states
     tensorboard:
-      log_dir: tb_logs
+      log_dir: asr_tf/tb_logs
       histogram_freq: 1
       write_graph: True
       write_images: True
